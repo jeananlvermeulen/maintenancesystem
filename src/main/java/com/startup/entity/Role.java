@@ -39,7 +39,6 @@ public class Role {
         }
     }
 
-
     public String getRoleId() {
         return roleId;
     }
