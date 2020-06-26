@@ -7,6 +7,7 @@ public class Role {
     
     
     public Role(){
+        
     }
     
     public Role (Builder builder){
