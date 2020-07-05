@@ -2,6 +2,12 @@ package com.startup.entity;
 
 import java.util.Objects;
 
+/**
+ * @author: Christ Amour NM
+ * Desc: Entity
+ * Date: 30 June 2020
+ */
+
 public class MaintenanceProf {
 
     private String maintenanceId;
