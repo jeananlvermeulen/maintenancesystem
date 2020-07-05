@@ -2,6 +2,12 @@ package com.startup.entity;
 
 import java.util.Objects;
 
+/**
+ * @author @VermeulenJL
+ * Desc: Entity for UserRole
+ * Date: 04 July 2020
+ */
+
 public class UserRole {
     private String userId;
     private String roleId;
