@@ -1,3 +1,9 @@
+/*
+ User class
+ 2/07/2020
+ 215285840
+ */
+
 package com.startup.entity;
 
 import java.util.Objects;
