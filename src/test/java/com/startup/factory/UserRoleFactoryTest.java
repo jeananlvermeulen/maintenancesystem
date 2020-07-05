@@ -6,6 +6,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * @author @VermeulenJL
+ * Desc: Test for UserRoleFactory
+ * Date: 05 July 2020
+ */
 public class UserRoleFactoryTest {
 
     @Test
