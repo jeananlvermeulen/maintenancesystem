@@ -1,31 +1,32 @@
+/*
+ User class
+ 2/07/2020
+ 215285840
+ */
+
 package com.startup.entity;
 
 import java.util.Objects;
 
-/**
- * @author: Christ Amour NM
- * Desc: Entity
- * Date: 30 June 2020
- */
+public class User {
 
-
-public class Maintenance {
-
-    private String maintenanceId;
+    private String userId;
     private String name;
     private String lastname;
 
-    public Maintenance() {
+    public User(){
+
     }
 
-    private Maintenance(Builder builder) {
-        this.maintenanceId = builder.maintenanceId;
+    private User(Builder builder) {
+        this.userId = builder.userId;
         this.name = builder.name;
         this.lastname = builder.lastname;
     }
 
-    public String getMaintenanceId() {
-        return maintenanceId;
+
+    public String getUserId() {
+        return userId;
     }
 
     public String getName() {
@@ -38,12 +39,12 @@ public class Maintenance {
 
     public static class Builder {
 
-        private String maintenanceId;
+        private String userId;
         private String name;
         private String lastname;
 
-        public Builder maintenanceId(String maintenanceId) {
-            this.maintenanceId = maintenanceId;
+        public Builder userId(String userId) {
+            this.userId = userId;
             return this;
         }
 
@@ -57,24 +58,24 @@ public class Maintenance {
             return this;
         }
 
-        public Builder copy(Maintenance maintenance){
-            this.maintenanceId = maintenance.maintenanceId;
-            this.name = maintenance.name;
-            this.lastname = maintenance.lastname;
+        public Builder copy(User user){
+            this.userId = user.userId;
+            this.name = user.name;
+            this.lastname = user.lastname;
 
             return this;
         }
 
-        public Maintenance build() {
-            return new Maintenance(this);
+        public User build() {
+            return new User(this);
         }
 
     }
 
     @Override
     public String toString() {
-        return "Maintenance{" +
-                "maintenanceId='" + maintenanceId + '\'' +
+        return "user{" +
+                "userId='" + userId + '\'' +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
                 '}';
@@ -84,12 +85,18 @@ public class Maintenance {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Maintenance maintenance = (Maintenance) o;
-        return maintenanceId.equals(maintenance.maintenanceId);
+        User user = (User) o;
+        return userId.equals(user.userId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(maintenanceId);
+        return Objects.hash(userId);
     }
+
+
 }
+
+
+
+
