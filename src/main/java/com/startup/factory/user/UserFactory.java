@@ -4,9 +4,9 @@
  215285840
  */
 
-package com.startup.factory;
+package com.startup.factory.user;
 
-import com.startup.entity.User;
+import com.startup.entity.user.User;
 
 import static com.startup.util.Amr.generateId;
 

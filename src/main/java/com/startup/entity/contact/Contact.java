@@ -1,4 +1,4 @@
-package com.startup.entity;
+package com.startup.entity.contact;
 import java.util.Objects;
 
 /**

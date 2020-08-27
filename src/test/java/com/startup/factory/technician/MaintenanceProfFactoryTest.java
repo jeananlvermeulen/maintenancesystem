@@ -1,10 +1,9 @@
-package com.startup.factory;
+package com.startup.factory.technician;
 
-import com.startup.entity.MaintenanceProf;
+import com.startup.entity.technician.MaintenanceProf;
+import com.startup.factory.technician.MaintenanceProfFactory;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MaintenanceProfFactoryTest {
 

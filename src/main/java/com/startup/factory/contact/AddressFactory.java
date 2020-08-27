@@ -4,9 +4,9 @@
  215285840
  */
 
-package com.startup.factory;
+package com.startup.factory.contact;
 
-import com.startup.entity.Address;
+import com.startup.entity.contact.Address;
 
 public class AddressFactory {
 

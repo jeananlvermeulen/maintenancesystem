@@ -1,6 +1,6 @@
-package com.startup.factory;
+package com.startup.factory.contact;
 
-import com.startup.entity.Contact;
+import com.startup.entity.contact.Contact;
 
 /**
  * @author @CloeteSC

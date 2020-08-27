@@ -1,10 +1,9 @@
-package com.startup.factory;
+package com.startup.factory.user;
 
-import com.startup.entity.User;
+import com.startup.entity.user.User;
+import com.startup.factory.user.UserFactory;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class UserFactoryTest {
 

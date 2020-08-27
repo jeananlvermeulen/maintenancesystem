@@ -1,10 +1,9 @@
-package com.startup.factory;
+package com.startup.factory.technician;
 
-import com.startup.entity.Profession;
+import com.startup.entity.technician.Profession;
+import com.startup.factory.technician.ProfessionFactory;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ProfessionFactoryTest {
 

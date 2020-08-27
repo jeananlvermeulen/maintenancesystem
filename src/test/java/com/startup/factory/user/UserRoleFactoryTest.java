@@ -1,10 +1,9 @@
-package com.startup.factory;
+package com.startup.factory.user;
 
-import com.startup.entity.UserRole;
+import com.startup.entity.user.UserRole;
+import com.startup.factory.user.UserRoleFactory;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author @VermeulenJL

@@ -1,6 +1,6 @@
-package com.startup.factory;
+package com.startup.factory.technician;
 
-import com.startup.entity.Maintenance;
+import com.startup.entity.technician.Maintenance;
 
 import static com.startup.util.Amr.generateId;
 

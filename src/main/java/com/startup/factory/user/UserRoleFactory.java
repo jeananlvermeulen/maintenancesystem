@@ -1,6 +1,6 @@
-package com.startup.factory;
+package com.startup.factory.user;
 
-import com.startup.entity.UserRole;
+import com.startup.entity.user.UserRole;
 
 import static com.startup.util.Amr.generateId;
 

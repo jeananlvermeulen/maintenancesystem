@@ -1,9 +1,8 @@
-package com.startup.factory;
+package com.startup.factory.contact;
 
-import com.startup.entity.Contact;
+import com.startup.entity.contact.Contact;
+import com.startup.factory.contact.ContactFactory;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ContactFactoryTest {
 

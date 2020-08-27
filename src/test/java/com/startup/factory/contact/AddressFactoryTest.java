@@ -1,10 +1,9 @@
-package com.startup.factory;
+package com.startup.factory.contact;
 
-import com.startup.entity.Address;
+import com.startup.entity.contact.Address;
+import com.startup.factory.contact.AddressFactory;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class AddressFactoryTest {
 

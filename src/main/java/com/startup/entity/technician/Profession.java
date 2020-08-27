@@ -1,4 +1,4 @@
-package com.startup.entity;
+package com.startup.entity.technician;
 
 import java.util.Objects;
 
