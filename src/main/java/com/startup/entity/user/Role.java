@@ -1,4 +1,4 @@
-package com.startup.entity;
+package com.startup.entity.user;
 
 public class Role {
     

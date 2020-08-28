@@ -1,6 +1,6 @@
-package com.startup.factory;
+package com.startup.factory.user;
 
-import com.startup.entity.Role;
+import com.startup.entity.user.Role;
 
 public class RoleFactory {
     public static Role buildRole(String roleId, String type){

@@ -1,14 +1,10 @@
-package com.startup.repository.contact;
+package com.startup.repository.contact.impl;
 
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class ContactRepositoryImplTest {
-
-    @Test
-    public void getAll() {
-    }
+public class AddressRepositoryImplTest {
 
     @Test
     public void create() {
@@ -24,5 +20,9 @@ public class ContactRepositoryImplTest {
 
     @Test
     public void read() {
+    }
+
+    @Test
+    public void getAll() {
     }
 }

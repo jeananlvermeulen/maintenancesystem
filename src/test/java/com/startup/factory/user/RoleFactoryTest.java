@@ -1,10 +1,9 @@
-package com.startup.factory;
+package com.startup.factory.user;
 
-import com.startup.entity.Role;
+import com.startup.entity.user.Role;
+import com.startup.factory.user.RoleFactory;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class RoleFactoryTest {
 
