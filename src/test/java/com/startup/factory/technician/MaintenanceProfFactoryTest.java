@@ -9,7 +9,7 @@ public class MaintenanceProfFactoryTest {
 
     @Test
     public void buildMaintenanceProf() {
-        MaintenanceProf maintenanceProf = MaintenanceProfFactory.buildMaintenanceProf("324r4321hjscjcbjsn");
+        MaintenanceProf maintenanceProf = MaintenanceProfFactory.buildMaintenanceProf("324r4321hjscjcbjsn","plumber");
         Assert.assertNotNull(maintenanceProf.getMaintenanceId());
         System.out.println(maintenanceProf);
     }

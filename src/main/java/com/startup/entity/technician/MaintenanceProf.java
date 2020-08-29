@@ -11,7 +11,7 @@ import java.util.Objects;
 public class MaintenanceProf {
 
     private String maintenanceId;
-    private String professionId;
+    private String profession;
 
     public MaintenanceProf() {
     }
@@ -19,7 +19,7 @@ public class MaintenanceProf {
     private MaintenanceProf(Builder builder) {
 
         this.maintenanceId = builder.maintenanceId;
-        this.professionId = builder.professionId;
+        this.profession = builder.profession;
     }
 
     public String getMaintenanceId() {
@@ -27,27 +27,27 @@ public class MaintenanceProf {
     }
 
     public String getProfession() {
-        return professionId;
+        return profession;
     }
 
     public static class Builder{
 
         private String maintenanceId;
-        private String professionId;
+        private String profession;
 
         public Builder maintenanceId(String maintenanceId) {
             this.maintenanceId = maintenanceId;
             return this;
         }
-        public Builder professionId(String professionId) {
-            this.professionId = professionId;
+        public Builder profession(String profession) {
+            this.profession = profession;
             return this;
         }
 
 
         public Builder copy(MaintenanceProf maintenanceProf){
             this.maintenanceId = maintenanceProf.maintenanceId;
-            this.professionId = maintenanceProf.professionId;
+            this.profession = maintenanceProf.profession;
 
             return this;
         }
@@ -62,20 +62,7 @@ public class MaintenanceProf {
     public String toString() {
         return "MaintenanceProf{" +
                 "maintenanceId='" + maintenanceId + '\'' +
-                ", professionId='" + professionId + '\'' +
+                ", profession='" + profession + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MaintenanceProf maintenanceProf = (MaintenanceProf) o;
-        return maintenanceId.equals(maintenanceProf.maintenanceId);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(maintenanceId);
     }
 }

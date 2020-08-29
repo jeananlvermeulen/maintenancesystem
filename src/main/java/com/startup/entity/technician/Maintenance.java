@@ -14,6 +14,7 @@ public class Maintenance {
     private String maintenanceId;
     private String name;
     private String lastname;
+    private MaintenanceProf maintenanceProf;
 
     public Maintenance() {
     }
@@ -22,6 +23,7 @@ public class Maintenance {
         this.maintenanceId = builder.maintenanceId;
         this.name = builder.name;
         this.lastname = builder.lastname;
+        this.maintenanceProf = builder.maintenanceProf;
     }
 
     public String getMaintenanceId() {
@@ -36,11 +38,17 @@ public class Maintenance {
         return lastname;
     }
 
+    public MaintenanceProf getMaintenanceProf() {
+        return maintenanceProf;
+    }
+
     public static class Builder {
 
         private String maintenanceId;
         private String name;
         private String lastname;
+        private MaintenanceProf maintenanceProf;
+
 
         public Builder maintenanceId(String maintenanceId) {
             this.maintenanceId = maintenanceId;
@@ -57,13 +65,19 @@ public class Maintenance {
             return this;
         }
 
-        public Builder copy(Maintenance maintenance){
-            this.maintenanceId = maintenance.maintenanceId;
-            this.name = maintenance.name;
-            this.lastname = maintenance.lastname;
-
+        public Builder maintenanceProf(MaintenanceProf maintenanceProf) {
+            this.maintenanceProf = maintenanceProf;
             return this;
         }
+
+
+//        public Builder copy(Maintenance maintenance){
+//            this.maintenanceId = maintenance.maintenanceId;
+//            this.name = maintenance.name;
+//            this.lastname = maintenance.lastname;
+//
+//            return this;
+//        }
 
         public Maintenance build() {
             return new Maintenance(this);
@@ -77,6 +91,7 @@ public class Maintenance {
                 "maintenanceId='" + maintenanceId + '\'' +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
+                ", maintenanceProf=" + maintenanceProf +
                 '}';
     }
 

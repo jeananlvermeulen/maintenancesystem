@@ -1,9 +1,6 @@
 package com.startup.factory.technician;
 
 import com.startup.entity.technician.MaintenanceProf;
-
-import static com.startup.util.Amr.generateId;
-
 /**
  * @author: Christ Amour NM
  * Desc: MaintenanceProfFactory
@@ -11,9 +8,10 @@ import static com.startup.util.Amr.generateId;
  */
 
 public class MaintenanceProfFactory {
-    public static MaintenanceProf buildMaintenanceProf(String professionId){
-        return new MaintenanceProf.Builder().maintenanceId(generateId())
-                .professionId(professionId)
+    public static MaintenanceProf buildMaintenanceProf(String maintenanceId, String profession){
+        return new MaintenanceProf.Builder()
+                .maintenanceId(maintenanceId)
+                .profession(profession)
                 .build();
     }
 }
