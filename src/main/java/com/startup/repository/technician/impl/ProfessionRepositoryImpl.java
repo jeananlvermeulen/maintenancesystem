@@ -22,8 +22,8 @@ public class ProfessionRepositoryImpl implements ProfessionRepository {
     }
 
     @Override
-    public void delete(String s) {
-
+    public boolean delete(String s) {
+        return true;
     }
 
     @Override

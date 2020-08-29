@@ -22,8 +22,8 @@ public class MaintenanceProfRepositoryImpl implements MaintenanceProfRepository 
     }
 
     @Override
-    public void delete(String s) {
-
+    public boolean delete(String s) {
+        return true;
     }
 
     @Override

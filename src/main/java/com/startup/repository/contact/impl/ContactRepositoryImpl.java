@@ -24,8 +24,8 @@ public class ContactRepositoryImpl implements ContactRepository {
     }
 
     @Override
-    public void delete(String s) {
-
+    public boolean delete(String s) {
+        return true;
     }
 
     @Override
