@@ -8,6 +8,9 @@ import org.junit.runners.MethodSorters;
 
 import java.util.Set;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProfessionRepositoryImplTest {
 
@@ -54,10 +57,12 @@ public class ProfessionRepositoryImplTest {
         d_getAll();
     }
 
+
     @Test
     public void e_delete() {
-        Profession saveProfession = getSavedProfession();
-        this.repository.delete(saveProfession.getProfessionId());
+        boolean deleted = repository.delete(profession.getProfessionId());
+        assertFalse(deleted);
+        System.out.println("deleted :" + deleted);
     }
 
     @Test
