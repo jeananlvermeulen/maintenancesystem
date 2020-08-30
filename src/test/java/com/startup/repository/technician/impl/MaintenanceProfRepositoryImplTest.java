@@ -61,9 +61,9 @@ public class MaintenanceProfRepositoryImplTest {
 
     @Test
     public void e_delete() {
-        MaintenanceProf savedMaintenanceProf = getSavedMaintenanceProf();
-        this.repository.delete(savedMaintenanceProf.getMaintenanceId());
-        d_getAll();
+        boolean deleted = repository.delete(maintenanceProf.getMaintenanceId());
+        assertTrue(deleted);
+        System.out.println("deleted :" + deleted);
     }
 
     @Test

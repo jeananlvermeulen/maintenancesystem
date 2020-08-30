@@ -1,6 +1,7 @@
 package com.startup.repository.technician.impl;
 
 import com.startup.entity.technician.Maintenance;
+import com.startup.entity.technician.Profession;
 import com.startup.repository.technician.MaintenanceRepository;
 
 import java.util.*;
@@ -51,6 +52,7 @@ public class MaintenanceRepositoryImpl implements MaintenanceRepository {
             return true;
         }
         return false;
+
     }
 
     @Override

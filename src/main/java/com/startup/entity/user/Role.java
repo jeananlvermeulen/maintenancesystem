@@ -38,6 +38,10 @@ public class Role {
         public Role build(){
             return new Role(this);
         }
+
+        public Builder setType(String electrician) {
+            return null;
+        }
     }
 
     public String getRoleId() {
