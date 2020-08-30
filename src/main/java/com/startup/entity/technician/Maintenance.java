@@ -15,6 +15,7 @@ public class Maintenance {
     private String name;
     private String lastname;
     private MaintenanceProf maintenanceProf;
+    private String profession;
 
     public Maintenance() {
     }
@@ -23,7 +24,8 @@ public class Maintenance {
         this.maintenanceId = builder.maintenanceId;
         this.name = builder.name;
         this.lastname = builder.lastname;
-        this.maintenanceProf = builder.maintenanceProf;
+//        this.maintenanceProf = builder.maintenanceProf;
+        this.profession = builder.profession;
     }
 
     public String getMaintenanceId() {
@@ -38,8 +40,12 @@ public class Maintenance {
         return lastname;
     }
 
-    public MaintenanceProf getMaintenanceProf() {
-        return maintenanceProf;
+//    public MaintenanceProf getMaintenanceProf() {
+//        return maintenanceProf;
+//    }
+
+    public String getProfession() {
+        return profession;
     }
 
     public static class Builder {
@@ -47,7 +53,8 @@ public class Maintenance {
         private String maintenanceId;
         private String name;
         private String lastname;
-        private MaintenanceProf maintenanceProf;
+//        private MaintenanceProf maintenanceProf;
+        private String profession;
 
 
         public Builder maintenanceId(String maintenanceId) {
@@ -65,25 +72,32 @@ public class Maintenance {
             return this;
         }
 
-        public Builder maintenanceProf(MaintenanceProf maintenanceProf) {
-            this.maintenanceProf = maintenanceProf;
+        public Builder profession(String profession) {
+            this.profession = profession;
             return this;
         }
 
-
-//        public Builder copy(Maintenance maintenance){
-//            this.maintenanceId = maintenance.maintenanceId;
-//            this.name = maintenance.name;
-//            this.lastname = maintenance.lastname;
-//
+//        public Builder maintenanceProf(MaintenanceProf maintenanceProf) {
+//            this.maintenanceProf = maintenanceProf;
 //            return this;
 //        }
+
+
+        public Builder copy(Maintenance maintenance){
+            this.maintenanceId = maintenance.maintenanceId;
+            this.name = maintenance.name;
+            this.lastname = maintenance.lastname;
+            this.profession = maintenance.profession;
+
+            return this;
+        }
 
         public Maintenance build() {
             return new Maintenance(this);
         }
 
     }
+
 
     @Override
     public String toString() {
@@ -92,6 +106,7 @@ public class Maintenance {
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", maintenanceProf=" + maintenanceProf +
+                ", profession='" + profession + '\'' +
                 '}';
     }
 
