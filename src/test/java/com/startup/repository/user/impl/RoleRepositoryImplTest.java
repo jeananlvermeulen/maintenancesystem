@@ -36,8 +36,9 @@ public class RoleRepositoryImplTest {
 
     @Test
     public void e_delete() {
-        repository.delete(role.getRoleId());
-
+        boolean deleted = repository.delete(role.getRoleId());
+        assertTrue(deleted);
+        System.out.println("deleted :" + deleted);
 
     }
 
