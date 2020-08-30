@@ -47,6 +47,7 @@ public class MaintenanceRepositoryImpl implements MaintenanceRepository {
     public void delete(String s) {
         Maintenance maintenance = read(s);
         this.maintenances.remove(s, maintenance);
+
     }
 
     @Override
