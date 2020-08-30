@@ -10,6 +10,8 @@ import org.junit.runners.MethodSorters;
 
 import java.util.Set;
 
+import static org.junit.Assert.assertTrue;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MaintenanceRepositoryImplTest {
 
@@ -64,8 +66,9 @@ public class MaintenanceRepositoryImplTest {
 
     @Test
     public void e_delete() {
-        Maintenance savedMaintenance = getSavedMaintenance();
-        this.repository.delete(savedMaintenance.getMaintenanceId());
+        boolean deleted = repository.delete(maintenance.getMaintenanceId());
+        assertTrue(deleted);
+        System.out.println("deleted :" + deleted);
     }
 
     @Test
