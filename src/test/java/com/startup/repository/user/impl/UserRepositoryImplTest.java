@@ -1,3 +1,6 @@
+/*
+Golden Minenhle Ngwenya 215285840
+ */
 package com.startup.repository.user.impl;
 
 import com.startup.entity.contact.Address;
@@ -46,15 +49,15 @@ public class UserRepositoryImplTest {
     }
 
     @Test
-    @Ignore
-    public void d_delete() {
+
+    public void e_delete() {
         boolean deleted = repository.delete(user.getUserId());
         assertTrue(deleted);
         System.out.println("deleted :" + deleted);
     }
 
     @Test
-    public void e_getAll() {
+    public void d_getAll() {
         Set<User> users = repository.getAll();
         assertEquals(1,users.size());
         System.out.println(repository.getAll());
