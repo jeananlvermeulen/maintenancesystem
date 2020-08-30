@@ -43,6 +43,7 @@ public class ProfessionRepositoryImpl implements ProfessionRepository {
     }
 
     @Override
+
     public boolean delete(String s) {
         Profession profession = read(s);
         if(profession != null){
