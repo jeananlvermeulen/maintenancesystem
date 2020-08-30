@@ -37,7 +37,7 @@ public class RoleRepositoryImplTest {
     @Test
     public void e_delete() {
         repository.delete(role.getRoleId());
-        
+
 
     }
 
