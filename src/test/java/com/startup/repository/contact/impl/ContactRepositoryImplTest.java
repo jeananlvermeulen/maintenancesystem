@@ -1,5 +1,6 @@
 package com.startup.repository.contact.impl;
 
+
 /**
  * @author @CloeteSC
  * Desc: Test Repository for Contact
@@ -52,4 +53,6 @@ public class ContactRepositoryImplTest {
         Contact read = repository.read(contact.getPhone());
         System.out.println("Read: " + read);
     }
+
+  
 }

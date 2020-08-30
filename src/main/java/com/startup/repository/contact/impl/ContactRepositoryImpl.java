@@ -1,5 +1,6 @@
 package com.startup.repository.contact.impl;
 
+
 /**
  * @author @CloeteSC
  * Desc: Repository for Contact
@@ -27,21 +28,25 @@ public class ContactRepositoryImpl implements ContactRepository {
     @Override
     public Set<Contact> getAll() {
         return this.contactDB;
+
     }
 
     @Override
     public Contact create(Contact contact) {
+
         this.contactDB.add(contact);
         return contact;
     }
 
     @Override
     public Contact update(Contact contact) {
+
         boolean deleteContact = delete(contact.getPhone());
         if (deleteContact){
             this.contactDB.add(contact);
             return contact;
         }
+
         return null;
     }
 
