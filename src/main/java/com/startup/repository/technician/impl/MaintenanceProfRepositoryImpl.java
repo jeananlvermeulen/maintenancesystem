@@ -42,9 +42,13 @@ public class MaintenanceProfRepositoryImpl implements MaintenanceProfRepository 
 
     @Override
 
-    public void delete(String s) {
+    public boolean delete(String s) {
         MaintenanceProf maintenanceProf = read(s);
-        this.maintenanceProfs.remove(maintenanceProf);
+        if(maintenanceProf != null){
+            this.maintenanceProfs.remove(maintenanceProf);
+            return true;
+        }
+        return false;
 
     }
 

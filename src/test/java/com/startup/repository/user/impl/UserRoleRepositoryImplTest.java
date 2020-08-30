@@ -31,7 +31,7 @@ public class UserRoleRepositoryImplTest {
     @Before
     public void setUp() throws Exception {
         this.repository = UserRoleRepositoryImpl.getRepository();
-        this.userRole = UserRoleFactory.buildUserRole("215002725","Full Stack Developer");
+        this.userRole = UserRoleFactory.buildUserRole("215002725");
     }
 
     @Test
@@ -51,30 +51,28 @@ public class UserRoleRepositoryImplTest {
     @Test
     public void c_update() {
         String newUserId = "the new userId";
-        String newRoleId = "the new roleId";
         UserRole userRole = new UserRole.Builder()
                 .copy(getSavedUserRole()).userId(newUserId)
-                .roleId(newRoleId).build();
+                .build();
         System.out.println("In update, about_to_updated = " + userRole);
         UserRole updated = this.repository.update(userRole);
         System.out.println("In update, updated = " + updated);
         Assert.assertSame(newUserId, updated.getUserId());
-        Assert.assertSame(newRoleId, updated.getRoleId());
         d_getAll();
     }
 
     @Test
     public void e_delete() {
         UserRole savedUserRole = getSavedUserRole();
-        this.repository.delete(savedUserRole.getUserId().getroleId());
+        this.repository.delete(savedUserRole.getUserId());
         d_getAll();
     }
 
     @Test
     public void b_read() {
         UserRole savedUserRole = getSavedUserRole();
-        System.out.println("In read, userId + roleId: " + savedUserRole.getUserId().getroleId());
-        UserRole read = this.repository.read(savedUserRole.getUserId().getroleId());
+        System.out.println("In read, userId + roleId: " + savedUserRole.getUserId());
+        UserRole read = this.repository.read(savedUserRole.getUserId());
         System.out.println("In read, read = " + read);
         d_getAll();
         Assert.assertEquals(savedUserRole, read);

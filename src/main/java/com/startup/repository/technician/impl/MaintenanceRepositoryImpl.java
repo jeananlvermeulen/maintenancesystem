@@ -44,10 +44,13 @@ public class MaintenanceRepositoryImpl implements MaintenanceRepository {
     }
 
     @Override
-    public void delete(String s) {
+    public boolean delete(String s) {
         Maintenance maintenance = read(s);
-        this.maintenances.remove(s, maintenance);
-
+        if(maintenance != null){
+            this.maintenances.remove(maintenance);
+            return true;
+        }
+        return false;
     }
 
     @Override

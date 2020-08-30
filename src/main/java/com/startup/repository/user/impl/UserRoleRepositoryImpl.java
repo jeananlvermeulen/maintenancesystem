@@ -29,7 +29,7 @@ public class UserRoleRepositoryImpl implements UserRoleRepository {
 
     @Override
     public UserRole create(UserRole userRole) {
-        if (read(userRole.getUserId()).getroleId()) == null){
+        if (read(userRole.getUserId()) == null){
             userRoles.add(userRole);
         }
         return userRole;
@@ -37,24 +37,25 @@ public class UserRoleRepositoryImpl implements UserRoleRepository {
 
     @Override
     public UserRole update(UserRole userRole) {
-        if (read(userRole.getUserId().getroleId()) == null){
-            delete(userRole.getUserId().getroleId());
+        if (read(userRole.getUserId()) == null){
+            delete(userRole.getUserId());
             create(userRole);
         }
         return userRole;
     }
 
     @Override
-    public void delete(String s) {
+    public boolean delete(String s) {
         UserRole userRole = read(s);
         this.userRoles.remove(userRole);
 
+        return true;
     }
 
     @Override
     public UserRole read(String s) {
         return userRoles.stream()
-                .filter(userRole -> s.equalsIgnoreCase(userRole.getUserId().getroleId()))
+                .filter(userRole -> s.equalsIgnoreCase(userRole.getUserId()))
                 .findAny()
                 .orElse(null);
     }
