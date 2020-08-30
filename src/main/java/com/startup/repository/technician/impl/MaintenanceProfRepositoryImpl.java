@@ -1,6 +1,7 @@
 package com.startup.repository.technician.impl;
 
 import com.startup.entity.technician.MaintenanceProf;
+import com.startup.entity.technician.Profession;
 import com.startup.repository.technician.MaintenanceProfRepository;
 
 import java.util.*;
@@ -41,9 +42,14 @@ public class MaintenanceProfRepositoryImpl implements MaintenanceProfRepository 
     }
 
     @Override
-    public void delete(String s) {
+
+    public boolean delete(String s) {
         MaintenanceProf maintenanceProf = read(s);
-        this.maintenanceProfs.remove(maintenanceProf);
+        if(maintenanceProf != null){
+            this.maintenanceProfs.remove(maintenanceProf);
+            return true;
+        }
+        return false;
 
     }
 
