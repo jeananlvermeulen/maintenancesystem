@@ -14,7 +14,7 @@ public class UserRepositoryImpl implements UserRepository {
     private static UserRepository repository = null;
     private Set<User> userDB;
 
-    public UserRepositoryImpl(){
+    private UserRepositoryImpl(){
         this.userDB = new HashSet<>();
     }
 

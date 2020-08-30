@@ -15,7 +15,7 @@ public class AddressRepositoryImpl implements AddressRepository {
     private static AddressRepository repository = null;
     private Set<Address> addressDB;
 
-    public AddressRepositoryImpl(){
+    private AddressRepositoryImpl(){
         this.addressDB = new HashSet<>();
     }
 
