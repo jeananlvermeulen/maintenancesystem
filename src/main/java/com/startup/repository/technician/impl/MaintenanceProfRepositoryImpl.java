@@ -41,6 +41,7 @@ public class MaintenanceProfRepositoryImpl implements MaintenanceProfRepository 
     }
 
     @Override
+
     public void delete(String s) {
         MaintenanceProf maintenanceProf = read(s);
         this.maintenanceProfs.remove(maintenanceProf);

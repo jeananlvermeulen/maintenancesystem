@@ -43,10 +43,10 @@ public class ProfessionRepositoryImpl implements ProfessionRepository {
     }
 
     @Override
+
     public void delete(String s) {
         Profession profession = read(s);
         this.professions.remove(profession);
-
     }
 
     @Override
