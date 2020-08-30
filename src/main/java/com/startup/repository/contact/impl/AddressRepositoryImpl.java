@@ -1,3 +1,7 @@
+/*
+Golden Minenhle Ngwenya 215285840
+ */
+
 package com.startup.repository.contact.impl;
 
 import com.startup.entity.contact.Address;
@@ -11,7 +15,7 @@ public class AddressRepositoryImpl implements AddressRepository {
     private static AddressRepository repository = null;
     private Set<Address> addressDB;
 
-    public AddressRepositoryImpl(){
+    private AddressRepositoryImpl(){
         this.addressDB = new HashSet<>();
     }
 
