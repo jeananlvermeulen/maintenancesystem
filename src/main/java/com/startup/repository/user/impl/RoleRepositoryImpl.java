@@ -1,5 +1,6 @@
 package com.startup.repository.user.impl;
 
+import com.startup.entity.technician.Profession;
 import com.startup.entity.user.Role;
 import com.startup.factory.user.RoleFactory;
 import com.startup.repository.user.RoleRepository;
@@ -37,10 +38,13 @@ public class RoleRepositoryImpl implements RoleRepository {
     }
 
     @Override
-    public void delete(String roleId) {
-        Role role = read(roleId);
-        if(role!=null)this.roleDB.remove(role);
-
+    public boolean delete(String s) {
+        Role role = read(s);
+        if(role != null){
+            this.roleDB.remove(role);
+            return true;
+        }
+        return false;
 
 
     }
