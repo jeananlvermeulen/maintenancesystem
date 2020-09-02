@@ -1,10 +1,9 @@
 package com.startup.repository.technician.impl;
 
 import com.startup.entity.technician.MaintenanceProf;
-import com.startup.entity.technician.Profession;
 import com.startup.repository.technician.MaintenanceProfRepository;
 
-//work done
+
 import java.util.*;
 
 public class MaintenanceProfRepositoryImpl implements MaintenanceProfRepository {
