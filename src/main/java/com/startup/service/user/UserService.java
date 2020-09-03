@@ -5,6 +5,6 @@ import com.startup.service.IService;
 
 import java.util.Set;
 
-public interface UserService extends IService {
+public interface UserService extends IService<User, String> {
     Set<User>getAll();
 }

@@ -7,22 +7,22 @@ import static org.junit.Assert.*;
 public class UserRoleServiceImplTest {
 
     @Test
-    public void getAll() {
+    public void d_getAll() {
     }
 
     @Test
-    public void create() {
+    public void a_create() {
     }
 
     @Test
-    public void read() {
+    public void b_read() {
     }
 
     @Test
-    public void update() {
+    public void c_update() {
     }
 
     @Test
-    public void delete() {
+    public void e_delete() {
     }
 }
