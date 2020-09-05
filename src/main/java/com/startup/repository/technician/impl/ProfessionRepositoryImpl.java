@@ -1,6 +1,7 @@
 package com.startup.repository.technician.impl;
 
 import com.startup.entity.technician.Profession;
+import com.startup.entity.user.User;
 import com.startup.repository.technician.ProfessionRepository;
 
 import java.util.HashSet;
@@ -44,12 +45,12 @@ public class ProfessionRepositoryImpl implements ProfessionRepository {
 
     @Override
 
-    public boolean delete(String s) {
-        Profession profession = read(s);
-        if(profession != null){
-            this.professions.remove(profession);
-            return true;
-        }
+    public boolean delete(String id) {
+        Profession profession = read(id);
+            if(profession != null){
+                this.professions.remove(profession);
+                return true;
+            }
         return false;
     }
 

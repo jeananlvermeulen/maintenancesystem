@@ -8,8 +8,9 @@ import org.junit.runners.MethodSorters;
 
 import java.util.Set;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProfessionRepositoryImplTest {
@@ -31,6 +32,7 @@ public class ProfessionRepositoryImplTest {
     @Test
     public void d_getAll() {
         Set<Profession> all = this.repository.getAll();
+        assertEquals(1,profession);
         System.out.println("get all : " + all);
     }
 
