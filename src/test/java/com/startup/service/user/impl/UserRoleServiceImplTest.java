@@ -1,5 +1,7 @@
 package com.startup.service.user.impl;
-
+/* Jeanan Vermeulen
+   215002725
+*/
 import org.junit.Test;
 
 import static org.junit.Assert.*;
