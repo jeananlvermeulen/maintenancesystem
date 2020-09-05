@@ -1,10 +1,9 @@
 package com.startup.repository.technician.impl;
 
 import com.startup.entity.technician.MaintenanceProf;
-import com.startup.entity.technician.Profession;
 import com.startup.repository.technician.MaintenanceProfRepository;
 
-//work done
+
 import java.util.*;
 
 public class MaintenanceProfRepositoryImpl implements MaintenanceProfRepository {
@@ -56,9 +55,11 @@ public class MaintenanceProfRepositoryImpl implements MaintenanceProfRepository 
 
     @Override
     public MaintenanceProf read(String s) {
-        return maintenanceProfs.stream()
-                .filter(maintenanceProf -> s.equalsIgnoreCase(maintenanceProf.getMaintenanceId()))
-                .findAny()
-                .orElse(null);
+        for (MaintenanceProf maintenanceProf : maintenanceProfs) {
+            if (s.equalsIgnoreCase(maintenanceProf.getMaintenanceId())) {
+                return maintenanceProf;
+            }
+        }
+        return null;
     }
 }

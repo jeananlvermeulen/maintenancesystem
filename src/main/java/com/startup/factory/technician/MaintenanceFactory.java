@@ -13,11 +13,11 @@ import static com.startup.util.Amr.generateId;
 
 public class MaintenanceFactory {
 
-    public static Maintenance buildMaintenance(String maintenanceId, String name, String lastname, String profession){
+    public static Maintenance buildMaintenance( String name, String lastname, String profession){
 
-        MaintenanceProf maintenanceProf = MaintenanceProfFactory.buildMaintenanceProf(maintenanceId, profession);
+//        MaintenanceProf maintenanceProf = MaintenanceProfFactory.buildMaintenanceProf(maintenanceId, profession);
         return new Maintenance.Builder().maintenanceId(generateId())
-                .maintenanceId(maintenanceId)
+
                 .name(name)
                 .lastname(lastname)
                 .build();
