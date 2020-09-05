@@ -25,14 +25,14 @@ public class AddressRepositoryImplTest {
     public void a_create() {
         Address created = repository.create(address);
         assertEquals(address.getPhysicalAddress(),created.getPhysicalAddress());
-        System.out.println("create" + created);
+        System.out.println("create " + created);
     }
 
     @Test
     public void b_read() {
         Address read = repository.read(address.getPhysicalAddress());
         assertEquals(address.getPhysicalAddress(), read.getPhysicalAddress());
-        System.out.println("reader" + read);
+        System.out.println("reader " + read);
     }
 
     @Test
