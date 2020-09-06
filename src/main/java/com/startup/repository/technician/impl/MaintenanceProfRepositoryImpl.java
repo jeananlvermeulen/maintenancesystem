@@ -55,9 +55,11 @@ public class MaintenanceProfRepositoryImpl implements MaintenanceProfRepository 
 
     @Override
     public MaintenanceProf read(String s) {
-        return maintenanceProfs.stream()
-                .filter(maintenanceProf -> s.equalsIgnoreCase(maintenanceProf.getMaintenanceId()))
-                .findAny()
-                .orElse(null);
+        for (MaintenanceProf maintenanceProf : maintenanceProfs) {
+            if (s.equalsIgnoreCase(maintenanceProf.getMaintenanceId())) {
+                return maintenanceProf;
+            }
+        }
+        return null;
     }
 }

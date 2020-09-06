@@ -5,6 +5,6 @@ import com.startup.service.IService;
 
 import java.util.Set;
 
-public interface ProfessionService extends IService {
+public interface ProfessionService extends IService<Profession, String> {
     Set<Profession> getAll();
 }

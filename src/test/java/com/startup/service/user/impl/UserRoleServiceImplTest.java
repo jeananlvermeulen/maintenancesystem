@@ -47,5 +47,6 @@ public class UserRoleServiceImplTest {
         boolean deleted = userRoleService.delete(userRole.getUserId());
         assertTrue(deleted);
         System.out.println("deleted: " + deleted);
+
     }
 }

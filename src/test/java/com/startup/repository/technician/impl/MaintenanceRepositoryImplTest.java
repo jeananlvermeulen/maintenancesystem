@@ -26,7 +26,7 @@ public class MaintenanceRepositoryImplTest {
     @Before
     public void setUp() throws Exception {
         this.repository = MaintenanceRepositoryImpl.getRepository();
-        this.maintenance = MaintenanceFactory.buildMaintenance("217025358","Christ"
+        this.maintenance = MaintenanceFactory.buildMaintenance("Christ"
         ,"Nganga", "IT technician");
     }
 

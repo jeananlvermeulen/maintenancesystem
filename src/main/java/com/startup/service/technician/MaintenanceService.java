@@ -5,7 +5,7 @@ import com.startup.service.IService;
 
 import java.util.Set;
 
-public interface MaintenanceService extends IService {
+public interface MaintenanceService extends IService<Maintenance, String>{
 
     Set<Maintenance> getAll();
 }
