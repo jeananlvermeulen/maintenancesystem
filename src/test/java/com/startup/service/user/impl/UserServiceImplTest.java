@@ -38,7 +38,7 @@ public class UserServiceImplTest {
     @Test
     public void b_read() {
         User read = service.read(user.getUserId());
-       Assert.assertEquals(user.getUserId(),read.getUserId());
+        Assert.assertEquals(user.getUserId(),read.getUserId());
         System.out.println("Read " + read);
     }
 
@@ -47,7 +47,7 @@ public class UserServiceImplTest {
         User updated = new User.Builder().copy(user).lastname("Ngwenya").build();
         updated = service.update(updated);
         Assert.assertEquals(user.getUserId(),updated.getUserId());
-       Assert.assertNotEquals(user.getLastname(),updated.getLastname());
+        Assert.assertNotEquals(user.getLastname(),updated.getLastname());
         System.out.println("update: " + updated);
     }
 
