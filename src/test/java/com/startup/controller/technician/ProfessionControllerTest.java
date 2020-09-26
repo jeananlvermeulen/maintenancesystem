@@ -25,7 +25,7 @@ public class ProfessionControllerTest {
     private static Profession profession = ProfessionFactory.buildProfession("IT Technician",
             "Everything about IT");
 
-    private TestRestTemplate restTemplate;
+    private TestRestTemplate restTemplate = new TestRestTemplate();
     private String baseUrl = "http://localhost:8080/profession/";
 
 
