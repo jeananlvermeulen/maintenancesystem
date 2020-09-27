@@ -3,6 +3,10 @@ package com.startup.controller.contact;
 import com.startup.entity.contact.Contact;
 import com.startup.factory.contact.ContactFactory;
 import org.junit.Before;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -18,7 +22,7 @@ import static org.junit.Assert.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
-@FixMethodOrder(MethodSorters.Name_ASCENDING)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ContactControllerTest {
 
     private static Contact contact = ContactFactory.createContact("0782253152", "shabied007@gmail.com", "0212265468");

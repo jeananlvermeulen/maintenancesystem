@@ -3,8 +3,8 @@ package com.startup.controller.contact;
 import com.startup.entity.contact.Contact;
 import com.startup.factory.contact.ContactFactory;
 import com.startup.service.contact.impl.ContactServiceImpl;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
 
