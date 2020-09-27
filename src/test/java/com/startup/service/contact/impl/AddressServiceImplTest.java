@@ -5,8 +5,6 @@ package com.startup.service.contact.impl;
 
 import com.startup.entity.contact.Address;
 import com.startup.factory.contact.AddressFactory;
-import com.startup.repository.contact.AddressRepository;
-import com.startup.repository.contact.impl.AddressRepositoryImpl;
 import com.startup.service.contact.AddressService;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -31,14 +29,14 @@ public class AddressServiceImplTest {
     @Test
     public void a_create() {
         Address created = service.create(address);
-        assertEquals(address.getPhysicalAddress(),created.getPhysicalAddress());
+        assertEquals(address.getAddressId(),created.getAddressId());
         System.out.println("create " + created);
     }
 
     @Test
     public void b_read() {
-        Address read = service.read(address.getPhysicalAddress());
-        assertEquals(address.getPhysicalAddress(), read.getPhysicalAddress());
+        Address read = service.read(address.getAddressId());
+        assertEquals(address.getAddressId(), read.getAddressId());
         System.out.println("reader " + read);
     }
 
@@ -46,14 +44,14 @@ public class AddressServiceImplTest {
     public void c_update() {
         Address updated = new Address.Builder().copy(address).postalAddress("10 Dorset Woodstock 8001").build();
         updated = service.update(updated);
-        assertEquals(address.getPhysicalAddress(),updated.getPhysicalAddress());
+        assertEquals(address.getAddressId(),updated.getAddressId());
         assertNotEquals(address.getPostalAddress(),updated.getPostalAddress());
         System.out.println("update: " + updated);
     }
 
     @Test
     public void e_delete() {
-        boolean deleted = service.delete(address.getPhysicalAddress());
+        boolean deleted = service.delete(address.getAddressId());
         assertTrue(deleted);
         System.out.println("deleted :" + deleted);
     }
