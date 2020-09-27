@@ -7,9 +7,11 @@ import com.startup.entity.user.UserRole;
 import com.startup.repository.user.UserRoleRepository;
 import com.startup.repository.user.impl.UserRoleRepositoryImpl;
 import com.startup.service.user.UserRoleService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class UserRoleServiceImpl implements UserRoleService {
 
     private static UserRoleService userRoleService = null;
