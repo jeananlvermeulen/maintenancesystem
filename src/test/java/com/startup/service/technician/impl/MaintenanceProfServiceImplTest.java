@@ -43,7 +43,7 @@ public class MaintenanceProfServiceImplTest {
         MaintenanceProf updated = new MaintenanceProf.Builder()
                 .copy(maintenanceProf)
                 .maintenanceId("21700333")
-                .profession("Plumber")
+                .professionId("Plumber")
                 .build();
     }
 
