@@ -54,7 +54,7 @@ public class ContactControllerTest {
 
     @Test
     public void c_update(){
-        Contact updated = new Contact.Builder().copy(contact).phone("0824865875").email("shade898@gmail.com").Homephone("0212205684").build();
+        Contact updated = new Contact.Builder().setPhone("0824865875").setEmail("shade898@gmail.com").setHomephone("0212205684").build();
         String url = baseUrl + "update";
         System.out.println("URL: " + url);
         System.out.println("post contact: " + updated);
