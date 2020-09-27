@@ -38,7 +38,7 @@ public class ProfessionServiceImpl implements ProfessionService {
     }
 
     @Override
-    public Profession read(String s) {
+    public Profession read(String s){
         return this.professionRepository.read(s);
     }
 

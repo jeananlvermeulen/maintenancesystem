@@ -1,5 +1,6 @@
 package com.startup.entity.technician;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -8,12 +9,12 @@ import java.util.Objects;
  * Date: 30 June 2020
  */
 
-public class MaintenanceProf {
+public class MaintenanceProf implements Serializable {
 
     private String maintenanceId;
     private String profession;
 
-    public MaintenanceProf() {
+    private MaintenanceProf() {
     }
 
     private MaintenanceProf(Builder builder) {
