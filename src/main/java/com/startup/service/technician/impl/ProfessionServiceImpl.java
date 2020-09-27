@@ -4,10 +4,12 @@ import com.startup.entity.technician.Profession;
 import com.startup.repository.technician.ProfessionRepository;
 import com.startup.repository.technician.impl.ProfessionRepositoryImpl;
 import com.startup.service.technician.ProfessionService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 
+@Service
 public class ProfessionServiceImpl implements ProfessionService {
 
     private static ProfessionService professionService = null;
