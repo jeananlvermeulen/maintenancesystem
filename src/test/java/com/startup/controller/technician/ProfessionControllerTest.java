@@ -70,6 +70,7 @@ public class ProfessionControllerTest {
         System.out.println("URL: " + url);
         System.out.println("post profession: " + updated);
         ResponseEntity<Profession> response = restTemplate.postForEntity(url, updated, Profession.class);
+        System.out.println(response);
         assertEquals(profession.getProfessionId(), response.getBody().getProfessionId());
     }
 

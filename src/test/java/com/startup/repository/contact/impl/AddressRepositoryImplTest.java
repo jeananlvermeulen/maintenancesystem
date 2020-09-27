@@ -7,7 +7,6 @@ import com.startup.entity.contact.Address;
 import com.startup.factory.contact.AddressFactory;
 import com.startup.repository.contact.AddressRepository;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
@@ -24,14 +23,14 @@ public class AddressRepositoryImplTest {
     @Test
     public void a_create() {
         Address created = repository.create(address);
-        assertEquals(address.getPhysicalAddress(),created.getPhysicalAddress());
+        assertEquals(address.getAddressId(),created.getAddressId());
         System.out.println("create " + created);
     }
 
     @Test
     public void b_read() {
-        Address read = repository.read(address.getPhysicalAddress());
-        assertEquals(address.getPhysicalAddress(), read.getPhysicalAddress());
+        Address read = repository.read(address.getAddressId());
+        assertEquals(address.getAddressId(), read.getAddressId());
         System.out.println("reader " + read);
     }
 
@@ -39,7 +38,7 @@ public class AddressRepositoryImplTest {
     public void c_update() {
         Address updated = new Address.Builder().copy(address).postalAddress("10 Dorset Woodstock 8001").build();
         updated = repository.update(updated);
-        assertEquals(address.getPhysicalAddress(),updated.getPhysicalAddress());
+        assertEquals(address.getAddressId(),updated.getAddressId());
         assertNotEquals(address.getPostalAddress(),updated.getPostalAddress());
         System.out.println("update: " + updated);
 
@@ -48,7 +47,7 @@ public class AddressRepositoryImplTest {
     @Test
     //@Ignore
     public void d_delete() {
-        boolean deleted = repository.delete(address.getPhysicalAddress());
+        boolean deleted = repository.delete(address.getAddressId());
         assertTrue(deleted);
         System.out.println("deleted :" + deleted);
     }
