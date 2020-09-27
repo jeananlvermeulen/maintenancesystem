@@ -48,4 +48,13 @@ public class MaintenanceProfController {
         return maintenanceProfService.getAll();
     }
 
+    @GetMapping("/read/{id}")
+    public MaintenanceProf read(@PathVariable String id){
+        return maintenanceProfService.read(id);
+    }
+    @PostMapping("/update")
+    public MaintenanceProf update(@RequestBody MaintenanceProf maintenanceProf){
+        return maintenanceProfService.update(maintenanceProf);
+    }
+
 }
