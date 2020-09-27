@@ -3,15 +3,11 @@ Golden Minenhle Ngwenya 215285840
  */
 package com.startup.repository.user.impl;
 
-import com.startup.entity.contact.Address;
+
 import com.startup.entity.user.User;
-import com.startup.factory.contact.AddressFactory;
 import com.startup.factory.user.UserFactory;
-import com.startup.repository.contact.AddressRepository;
-import com.startup.repository.contact.impl.AddressRepositoryImpl;
 import com.startup.repository.user.UserRepository;
 import org.junit.FixMethodOrder;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 

@@ -3,9 +3,11 @@ import com.startup.entity.technician.MaintenanceProf;
 import com.startup.repository.technician.MaintenanceProfRepository;
 import com.startup.repository.technician.impl.MaintenanceProfRepositoryImpl;
 import com.startup.service.technician.MaintenanceProfService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class MaintenanceProfServiceImpl implements MaintenanceProfService {
 
 

@@ -4,10 +4,11 @@ import com.startup.entity.contact.Address;
 import com.startup.repository.contact.AddressRepository;
 import com.startup.repository.contact.impl.AddressRepositoryImpl;
 import com.startup.service.contact.AddressService;
+import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.Set;
 
+@Service
 public class AddressServiceImpl implements AddressService {
 
 

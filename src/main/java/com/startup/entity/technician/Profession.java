@@ -1,5 +1,6 @@
 package com.startup.entity.technician;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -8,13 +9,13 @@ import java.util.Objects;
  * Date: 30 June 2020
  */
 
-public class Profession {
+public class Profession implements Serializable {
 
     private String professionId;
     private String name;
     private String description;
 
-    public Profession() {
+    private Profession() {
     }
 
 
