@@ -3,6 +3,8 @@ package com.startup.service.contact.impl;
 import com.startup.entity.contact.Address;
 import com.startup.repository.contact.AddressRepository;
 import com.startup.repository.contact.impl.AddressRepositoryImpl;
+import com.startup.repository.user.UserRepository;
+import com.startup.repository.user.impl.UserRepositoryImpl;
 import com.startup.service.contact.AddressService;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ public class AddressServiceImpl implements AddressService {
 
     private static AddressService service = null;
     private AddressRepository repository;
+
 
     private AddressServiceImpl(){
         this.repository = AddressRepositoryImpl.getRepository();
@@ -50,4 +53,10 @@ public class AddressServiceImpl implements AddressService {
     public Set<Address> getAll() {
         return this.repository.getAll();
     }
+
+    @Override
+    public int getNumberOfActiveAddresses() {
+      return repository.getAll().size();
+    }
+
 }
