@@ -4,10 +4,12 @@ import com.startup.entity.user.User;
 import com.startup.repository.user.UserRepository;
 import com.startup.repository.user.impl.UserRepositoryImpl;
 import com.startup.service.user.UserService;
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     private static UserService service = null;

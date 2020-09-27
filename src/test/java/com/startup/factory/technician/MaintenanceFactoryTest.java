@@ -9,8 +9,7 @@ public class MaintenanceFactoryTest {
 
     @Test
     public void buildMaintenance() {
-        Maintenance maintenance = MaintenanceFactory.buildMaintenance("Christ","Nganga",
-                "IT technician");
+        Maintenance maintenance = MaintenanceFactory.buildMaintenance("Christ","Nganga");
         Assert.assertNotNull(maintenance.getMaintenanceId());
         System.out.println(maintenance);
     }

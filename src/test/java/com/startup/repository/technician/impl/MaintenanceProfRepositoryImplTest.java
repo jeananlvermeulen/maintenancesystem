@@ -47,15 +47,15 @@ public class MaintenanceProfRepositoryImplTest {
     @Test
     public void c_update() {
         String newMaintenanceId = "the new maintenanceId";
-        String newProfession = "new profession";
+        String newProfessionId = "new professionId";
         MaintenanceProf maintenanceProf = new MaintenanceProf.Builder()
                 .copy(getSavedMaintenanceProf()).maintenanceId(newMaintenanceId)
-                .profession(newProfession).build();
+                .professionId(newProfessionId).build();
         System.out.println("In update, about_to_updated = " + maintenanceProf);
         MaintenanceProf updated = this.repository.update(maintenanceProf);
         System.out.println("In update, updated = " + updated);
         Assert.assertSame(newMaintenanceId, updated.getMaintenanceId());
-        Assert.assertSame(newProfession, updated.getProfession());
+        Assert.assertSame(newProfessionId, updated.getProfessionId());
         d_getAll();
     }
 

@@ -61,6 +61,15 @@ public class Contact {
             return this;
         }
 
+        public Contact.Builder copy(Contact contact){
+            this.phone = contact.phone;
+            this.homephone = contact.homephone;
+            this.email = contact.email;
+
+            return this;
+        }
+
+
         public Contact build(){
             return new Contact(this);
         }

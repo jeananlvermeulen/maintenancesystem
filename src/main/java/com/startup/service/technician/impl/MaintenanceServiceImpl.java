@@ -3,10 +3,11 @@ import com.startup.entity.technician.Maintenance;
 import com.startup.repository.technician.MaintenanceRepository;
 import com.startup.repository.technician.impl.MaintenanceRepositoryImpl;
 import com.startup.service.technician.MaintenanceService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-
+@Service
 public class MaintenanceServiceImpl implements MaintenanceService {
 
     private static MaintenanceService maintenanceService = null;
