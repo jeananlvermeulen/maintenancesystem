@@ -8,10 +8,10 @@ import com.startup.entity.technician.MaintenanceProf;
  */
 
 public class MaintenanceProfFactory {
-    public static MaintenanceProf buildMaintenanceProf(String maintenanceId, String profession){
+    public static MaintenanceProf buildMaintenanceProf(String maintenanceId, String professionId){
         return new MaintenanceProf.Builder()
                 .maintenanceId(maintenanceId)
-                .profession(profession)
+                .professionId(professionId)
                 .build();
     }
 }
