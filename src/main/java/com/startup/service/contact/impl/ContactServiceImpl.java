@@ -8,9 +8,10 @@ import com.startup.entity.contact.Contact;
 import com.startup.repository.contact.ContactRepository;
 import com.startup.repository.contact.impl.ContactRepositoryImpl;
 import com.startup.service.contact.ContactService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class ContactServiceImpl implements ContactService {
 
     private static ContactService service = null;

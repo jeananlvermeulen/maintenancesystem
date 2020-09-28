@@ -20,7 +20,7 @@ public class MaintenanceServiceImplTest {
 
     private static MaintenanceService maintenanceService = MaintenanceServiceImpl.getService();
     private static Maintenance maintenance = MaintenanceFactory
-            .buildMaintenance("Christ","Nganga","IT technician");
+            .buildMaintenance("Christ","Nganga");
 
 
     @Test

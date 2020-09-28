@@ -1,5 +1,6 @@
 package com.startup.entity.technician;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -9,15 +10,15 @@ import java.util.Objects;
  */
 
 
-public class Maintenance {
+public class Maintenance implements Serializable{
 
     private String maintenanceId;
     private String name;
     private String lastname;
     private MaintenanceProf maintenanceProf;
-    private String profession;
+//    private String profession;
 
-    public Maintenance() {
+    private Maintenance() {
     }
 
     private Maintenance(Builder builder) {
@@ -25,7 +26,7 @@ public class Maintenance {
         this.name = builder.name;
         this.lastname = builder.lastname;
 //        this.maintenanceProf = builder.maintenanceProf;
-        this.profession = builder.profession;
+//        this.profession = builder.profession;
     }
 
     public String getMaintenanceId() {
@@ -44,9 +45,9 @@ public class Maintenance {
 //        return maintenanceProf;
 //    }
 
-    public String getProfession() {
-        return profession;
-    }
+//    public String getProfession() {
+//        return profession;
+//    }
 
     public static class Builder {
 
@@ -87,7 +88,7 @@ public class Maintenance {
             this.maintenanceId = maintenance.maintenanceId;
             this.name = maintenance.name;
             this.lastname = maintenance.lastname;
-            this.profession = maintenance.profession;
+//            this.profession = maintenance.profession;
 
             return this;
         }
@@ -106,7 +107,7 @@ public class Maintenance {
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", maintenanceProf=" + maintenanceProf +
-                ", profession='" + profession + '\'' +
+//                ", profession='" + profession + '\'' +
                 '}';
     }
 

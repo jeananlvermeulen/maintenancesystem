@@ -1,6 +1,6 @@
 package com.startup.entity.technician;
 
-import java.util.Objects;
+import java.io.Serializable;
 
 /**
  * @author: Christ Amour NM
@@ -8,46 +8,46 @@ import java.util.Objects;
  * Date: 30 June 2020
  */
 
-public class MaintenanceProf {
+public class MaintenanceProf implements Serializable {
 
     private String maintenanceId;
-    private String profession;
+    private String professionId;
 
-    public MaintenanceProf() {
+    private MaintenanceProf() {
     }
 
     private MaintenanceProf(Builder builder) {
 
         this.maintenanceId = builder.maintenanceId;
-        this.profession = builder.profession;
+        this.professionId = builder.professionId;
     }
 
     public String getMaintenanceId() {
         return maintenanceId;
     }
 
-    public String getProfession() {
-        return profession;
+    public String getProfessionId() {
+        return professionId;
     }
 
     public static class Builder{
 
         private String maintenanceId;
-        private String profession;
+        private String professionId;
 
         public Builder maintenanceId(String maintenanceId) {
             this.maintenanceId = maintenanceId;
             return this;
         }
-        public Builder profession(String profession) {
-            this.profession = profession;
+        public Builder professionId(String professionId) {
+            this.professionId = professionId;
             return this;
         }
 
 
         public Builder copy(MaintenanceProf maintenanceProf){
             this.maintenanceId = maintenanceProf.maintenanceId;
-            this.profession = maintenanceProf.profession;
+            this.professionId = maintenanceProf.professionId;
 
             return this;
         }
@@ -62,7 +62,7 @@ public class MaintenanceProf {
     public String toString() {
         return "MaintenanceProf{" +
                 "maintenanceId='" + maintenanceId + '\'' +
-                ", profession='" + profession + '\'' +
+                ", profession='" + professionId + '\'' +
                 '}';
     }
 }

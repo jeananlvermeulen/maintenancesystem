@@ -34,14 +34,14 @@ public class AddressRepositoryImpl implements AddressRepository {
     @Override
     public Address read(String s) {
         for(Address address: this.addressDB){
-            if(address.getPhysicalAddress().equalsIgnoreCase(s))return address;
+            if(address.getAddressId().equalsIgnoreCase(s))return address;
         }
         return null;
     }
 
     @Override
     public Address update(Address address) {
-        boolean deleteAddress = delete(address.getPhysicalAddress());
+        boolean deleteAddress = delete(address.getAddressId());
         if(deleteAddress){
             this.addressDB.add(address);
             return address;

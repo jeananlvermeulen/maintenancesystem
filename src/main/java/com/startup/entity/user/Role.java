@@ -1,14 +1,14 @@
 package com.startup.entity.user;
 
-public class Role {
+import java.io.Serializable;
+
+public class Role implements Serializable {
     
     private String  roleId;
     private String type;
-    
-    
-    public Role(){
-        
-    }
+
+    private Role(){}
+
     
     public Role (Builder builder){
         this.roleId = builder.roleId;
