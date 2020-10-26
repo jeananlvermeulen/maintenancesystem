@@ -4,9 +4,10 @@ import com.startup.entity.user.Role;
 import com.startup.repository.user.RoleRepository;
 import com.startup.repository.user.impl.RoleRepositoryImpl;
 import com.startup.service.user.RoleService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class RoleServiceImpl implements RoleService {
 
     private static RoleService roleService = null;
