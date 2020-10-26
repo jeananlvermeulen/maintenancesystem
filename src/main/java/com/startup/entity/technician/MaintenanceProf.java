@@ -1,5 +1,9 @@
 package com.startup.entity.technician;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import java.io.Serializable;
 
 /**
@@ -8,12 +12,15 @@ import java.io.Serializable;
  * Date: 30 June 2020
  */
 
+@Entity
+@IdClass(MaintenanceProfId.class)
 public class MaintenanceProf implements Serializable {
 
-    private String maintenanceId;
-    private String professionId;
+    @Id
+    @Column()
+    private String maintenanceId, professionId;
 
-    private MaintenanceProf() {
+    protected MaintenanceProf() {
     }
 
     private MaintenanceProf(Builder builder) {

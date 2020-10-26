@@ -12,10 +12,10 @@ import static com.startup.util.Amr.generateId;
 
 public class ProfessionFactory {
 
-    public static Profession buildProfession(String name, String description){
+    public static Profession buildProfession(String profName, String profDesc){
         return new Profession.Builder().professionId(generateId())
-                .name(name)
-                .description(description)
+                .profName(profName)
+                .profDesc(profDesc)
                 .build();
     }
 }

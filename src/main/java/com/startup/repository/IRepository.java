@@ -1,5 +1,6 @@
 package com.startup.repository;
 
+@Deprecated
 public interface IRepository<T,ID> {
 
     T create(T t);

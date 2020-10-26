@@ -1,52 +1,46 @@
 package com.startup.service.technician.impl;
 import com.startup.entity.technician.MaintenanceProf;
 import com.startup.repository.technician.MaintenanceProfRepository;
-import com.startup.repository.technician.impl.MaintenanceProfRepositoryImpl;
 import com.startup.service.technician.MaintenanceProfService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class MaintenanceProfServiceImpl implements MaintenanceProfService {
 
-
-    private static MaintenanceProfService maintenanceProfService = null;
-
+    @Autowired
     private MaintenanceProfRepository maintenanceProfRepository;
-
-    private MaintenanceProfServiceImpl(){
-        this.maintenanceProfRepository = MaintenanceProfRepositoryImpl.getRepository();
-
-    }
-
-    public static MaintenanceProfService getService(){
-        if(maintenanceProfService == null) maintenanceProfService = new MaintenanceProfServiceImpl();
-        return maintenanceProfService;
-    }
 
     @Override
     public Set<MaintenanceProf> getAll() {
-        return this.maintenanceProfRepository.getAll();
+        return this.maintenanceProfRepository.findAll().stream().collect(Collectors.toSet());
     }
 
     @Override
     public MaintenanceProf create(MaintenanceProf maintenanceProf) {
-        return this.maintenanceProfRepository.create(maintenanceProf);
+        return this.maintenanceProfRepository.save(maintenanceProf);
     }
 
     @Override
     public MaintenanceProf read(String s) {
-        return this.maintenanceProfRepository.read(s);
+        return this.maintenanceProfRepository.findById(s).orElse(null);
     }
 
     @Override
     public MaintenanceProf update(MaintenanceProf maintenanceProf) {
-        return this.maintenanceProfRepository.update(maintenanceProf);
+        if(this.maintenanceProfRepository.existsById(maintenanceProf.getMaintenanceId())){
+            return this.maintenanceProfRepository.save(maintenanceProf);
+        }
+        return null;
     }
 
     @Override
     public boolean delete(String s) {
-        return this.maintenanceProfRepository.delete(s);
+        this.maintenanceProfRepository.deleteById(s);
+        if(this.maintenanceProfRepository.existsById(s)) return false;
+        else return true;
     }
 }
