@@ -33,6 +33,7 @@ public class MaintetnanceController {
     public Set<Maintenance> getAll(){
         return maintenanceService.getAll();
     }
+
     @DeleteMapping("/delete/{id}")
     public boolean delete(@PathVariable String id){
         return maintenanceService.delete(id);
