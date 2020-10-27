@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
@@ -15,7 +16,8 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ProfessionServiceImplTest {
 
-     private static ProfessionService professionService = ProfessionServiceImpl.getService();
+     @Autowired
+     private ProfessionService professionService;
      private static Profession profession = ProfessionFactory.buildProfession("plumber","everything about pipe");
 
 
@@ -44,8 +46,8 @@ public class ProfessionServiceImplTest {
     public void c_update() {
         Profession updated = new Profession.Builder()
                 .copy(profession)
-                .name("IT technician")
-                .description("everything about IT")
+                .profName("IT technician")
+                .profDesc("everything about IT")
                 .build();
     }
 

@@ -2,10 +2,12 @@ package com.startup.repository.technician;
 
 import com.startup.entity.technician.Maintenance;
 import com.startup.repository.IRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Set;
 
-public interface MaintenanceRepository extends IRepository<Maintenance, String> {
+@Repository
+public interface MaintenanceRepository extends JpaRepository<Maintenance, String>{
 
-    Set<Maintenance> getAll();
 }

@@ -1,15 +1,13 @@
 package com.startup.service.technician.impl;
 
 import com.startup.entity.technician.Maintenance;
-import com.startup.entity.technician.Profession;
 import com.startup.factory.technician.MaintenanceFactory;
-import com.startup.factory.technician.ProfessionFactory;
 import com.startup.service.technician.MaintenanceService;
-import com.startup.service.technician.ProfessionService;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
@@ -18,7 +16,8 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MaintenanceServiceImplTest {
 
-    private static MaintenanceService maintenanceService = MaintenanceServiceImpl.getService();
+    @Autowired
+    private MaintenanceService maintenanceService;
     private static Maintenance maintenance = MaintenanceFactory
             .buildMaintenance("Christ","Nganga");
 
@@ -50,7 +49,6 @@ public class MaintenanceServiceImplTest {
                 .copy(maintenance)
                 .name("Amour")
                 .lastname("Moussiessi")
-                .profession("Plumber")
                 .build();
     }
 
