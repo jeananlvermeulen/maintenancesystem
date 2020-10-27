@@ -1,51 +1,45 @@
 package com.startup.service.technician.impl;
 import com.startup.entity.technician.Maintenance;
 import com.startup.repository.technician.MaintenanceRepository;
-import com.startup.repository.technician.impl.MaintenanceRepositoryImpl;
 import com.startup.service.technician.MaintenanceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class MaintenanceServiceImpl implements MaintenanceService {
 
-    private static MaintenanceService maintenanceService = null;
-
+    @Autowired
     private MaintenanceRepository maintenanceRepository;
-
-    private MaintenanceServiceImpl(){
-        this.maintenanceRepository = MaintenanceRepositoryImpl.getRepository();
-
-    }
-
-    public static MaintenanceService getService(){
-        if(maintenanceService == null) maintenanceService = new MaintenanceServiceImpl();
-        return maintenanceService;
-    }
 
     @Override
     public Set<Maintenance> getAll() {
-        return this.maintenanceRepository.getAll();
+        return this.maintenanceRepository.findAll().stream().collect(Collectors.toSet());
     }
 
     @Override
     public Maintenance create(Maintenance maintenance) {
-        return this.maintenanceRepository.create(maintenance);
+        return this.maintenanceRepository.save(maintenance);
     }
 
     @Override
     public Maintenance read(String s) {
-        return this.maintenanceRepository.read(s);
+        return this.maintenanceRepository.findById(s).orElse(null);
     }
 
     @Override
     public Maintenance update(Maintenance maintenance) {
-        return this.maintenanceRepository.update(maintenance);
+        if(this.maintenanceRepository.existsById(maintenance.getMaintenanceId())){
+            return this.maintenanceRepository.save(maintenance);
+        }
+        return null;
     }
 
     @Override
     public boolean delete(String s) {
-        return this.maintenanceRepository.delete(s);
+        this.maintenanceRepository.deleteById(s);
+        if(this.maintenanceRepository.existsById(s)) return false;
+        else return true;
     }
 }

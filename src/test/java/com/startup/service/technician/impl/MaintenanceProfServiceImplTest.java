@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
@@ -18,7 +19,8 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MaintenanceProfServiceImplTest {
 
-    private static MaintenanceProfService maintenanceProfService = MaintenanceProfServiceImpl.getService();
+    @Autowired
+    private MaintenanceProfService maintenanceProfService;
     private static MaintenanceProf maintenanceProf = MaintenanceProfFactory
             .buildMaintenanceProf("217025358","IT technician");
 

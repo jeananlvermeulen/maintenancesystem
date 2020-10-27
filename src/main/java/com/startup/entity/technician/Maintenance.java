@@ -1,5 +1,8 @@
 package com.startup.entity.technician;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -10,23 +13,25 @@ import java.util.Objects;
  */
 
 
+@Entity
 public class Maintenance implements Serializable{
 
+    @Id
+    @Column()
     private String maintenanceId;
+    @Column()
     private String name;
+    @Column()
     private String lastname;
-    private MaintenanceProf maintenanceProf;
-//    private String profession;
 
-    private Maintenance() {
+
+    protected Maintenance() {
     }
 
     private Maintenance(Builder builder) {
         this.maintenanceId = builder.maintenanceId;
         this.name = builder.name;
         this.lastname = builder.lastname;
-//        this.maintenanceProf = builder.maintenanceProf;
-//        this.profession = builder.profession;
     }
 
     public String getMaintenanceId() {
@@ -41,21 +46,12 @@ public class Maintenance implements Serializable{
         return lastname;
     }
 
-//    public MaintenanceProf getMaintenanceProf() {
-//        return maintenanceProf;
-//    }
-
-//    public String getProfession() {
-//        return profession;
-//    }
 
     public static class Builder {
 
         private String maintenanceId;
         private String name;
         private String lastname;
-//        private MaintenanceProf maintenanceProf;
-        private String profession;
 
 
         public Builder maintenanceId(String maintenanceId) {
@@ -73,22 +69,11 @@ public class Maintenance implements Serializable{
             return this;
         }
 
-        public Builder profession(String profession) {
-            this.profession = profession;
-            return this;
-        }
-
-//        public Builder maintenanceProf(MaintenanceProf maintenanceProf) {
-//            this.maintenanceProf = maintenanceProf;
-//            return this;
-//        }
-
 
         public Builder copy(Maintenance maintenance){
             this.maintenanceId = maintenance.maintenanceId;
             this.name = maintenance.name;
             this.lastname = maintenance.lastname;
-//            this.profession = maintenance.profession;
 
             return this;
         }
@@ -106,8 +91,6 @@ public class Maintenance implements Serializable{
                 "maintenanceId='" + maintenanceId + '\'' +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", maintenanceProf=" + maintenanceProf +
-//                ", profession='" + profession + '\'' +
                 '}';
     }
 
