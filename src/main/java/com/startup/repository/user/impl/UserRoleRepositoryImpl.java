@@ -1,8 +1,8 @@
 
-/*
-Jeanan Vermeulen
-215002725
-*/ package com.startup.repository.user.impl;
+//Jeanan Vermeulen
+//215002725
+
+/*package com.startup.repository.user.impl;
 
 import com.startup.entity.user.UserRole;
 import com.startup.repository.user.UserRoleRepository;
@@ -61,4 +61,4 @@ public class UserRoleRepositoryImpl implements UserRoleRepository {
                 .orElse(null);
     }
 }
-
+*/
