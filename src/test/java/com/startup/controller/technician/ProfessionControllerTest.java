@@ -65,7 +65,7 @@ public class ProfessionControllerTest {
 
     @Test
     public void c_update(){
-        Profession updated = new Profession.Builder().copy(profession).name("Plumber").description("Everything about pipe").build();
+        Profession updated = new Profession.Builder().copy(profession).profName("Plumber").profDesc("Everything about pipe").build();
         String url = baseUrl + "update";
         System.out.println("URL: " + url);
         System.out.println("post profession: " + updated);

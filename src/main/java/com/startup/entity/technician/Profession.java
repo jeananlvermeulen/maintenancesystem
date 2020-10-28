@@ -1,5 +1,10 @@
 package com.startup.entity.technician;
 
+import org.hibernate.annotations.Table;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -9,40 +14,41 @@ import java.util.Objects;
  * Date: 30 June 2020
  */
 
+@Entity
 public class Profession implements Serializable {
 
+    @Id
     private String professionId;
-    private String name;
-    private String description;
+    private String profName;
+    private String profDesc;
 
-    private Profession() {
+    protected Profession() {
     }
-
 
     private Profession(Builder builder) {
 
         this.professionId = builder.professionId;
-        this.name = builder.name;
-        this.description = builder.description;
+        this.profName = builder.profName;
+        this.profDesc = builder.profDesc;
     }
 
     public String getProfessionId() {
         return professionId;
     }
 
-    public String getName() {
-        return name;
+    public String getProfName() {
+        return profName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getProfDesc() {
+        return profDesc;
     }
 
     public static class Builder{
 
         private String professionId;
-        private String name;
-        private String description;
+        private String profName;
+        private String profDesc;
 
 
         public Builder professionId(String professionId) {
@@ -51,22 +57,22 @@ public class Profession implements Serializable {
         }
 
 
-        public Builder name(String name) {
-            this.name = name;
+        public Builder profName(String profName) {
+            this.profName = profName;
             return this;
         }
 
 
-        public Builder description(String description) {
-            this.description = description;
+        public Builder profDesc(String profDesc) {
+            this.profDesc = profDesc;
             return this;
         }
 
 
         public Builder copy(Profession profession){
             this.professionId = profession.professionId;
-            this.name = profession.name;
-            this.description = profession.description;
+            this.profName = profession.profName;
+            this.profDesc = profession.profDesc;
 
             return this;
         }
@@ -81,8 +87,8 @@ public class Profession implements Serializable {
     public String toString() {
         return "Profession{" +
                 "professionId='" + professionId + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
+                ", profName='" + profName + '\'' +
+                ", profDesc='" + profDesc + '\'' +
                 '}';
     }
 

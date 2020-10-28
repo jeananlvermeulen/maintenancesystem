@@ -1,5 +1,4 @@
 package com.startup.controller.technician;
-
 import com.startup.entity.technician.Maintenance;
 import com.startup.entity.technician.MaintenanceProf;
 import com.startup.entity.technician.Profession;
@@ -55,6 +54,10 @@ public class MaintenanceProfController {
     @PostMapping("/update")
     public MaintenanceProf update(@RequestBody MaintenanceProf maintenanceProf){
         return maintenanceProfService.update(maintenanceProf);
+    }
+    @DeleteMapping("/delete/{id}")
+    public boolean delete(@PathVariable String id){
+        return maintenanceProfService.delete(id);
     }
 
 }
