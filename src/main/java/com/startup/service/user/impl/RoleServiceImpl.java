@@ -2,57 +2,49 @@ package com.startup.service.user.impl;
 
 import com.startup.entity.user.Role;
 import com.startup.repository.user.RoleRepository;
-import com.startup.repository.user.impl.RoleRepositoryImpl;
+
 import com.startup.service.user.RoleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
+
 @Service
 public class RoleServiceImpl implements RoleService {
 
-    private static RoleService roleService = null;
+    @Autowired
     private RoleRepository roleRepository;
-
-    private RoleServiceImpl() {
-
-        this.roleRepository = RoleRepositoryImpl.getRepository();
-    }
-
-    public static RoleService getService() {
-        if (roleService == null) roleService = new RoleServiceImpl();
-        return roleService;
-
-    }
 
     @Override
     public Set<Role> getAll() {
 
-        return this.roleRepository.getAll();
+        return this.roleRepository.findAll().stream().collect(Collectors.toSet());
     }
 
     @Override
     public Role create(Role role) {
 
-        return this.roleRepository.create(role);
+        return this.roleRepository.save(role);
     }
-
     @Override
     public Role read(String roleId) {
 
-        return this.roleRepository.read(roleId);
+        return this.roleRepository.findById(roleId).orElseGet(null);
     }
 
     @Override
     public Role update(Role role) {
 
-        return this.roleRepository.update(role);
+        return this.roleRepository.save(role);
     }
 
     @Override
     public boolean delete(String s) {
 
-
-        return this.roleRepository.delete(s);
+        this.roleRepository.deleteById(s);
+        if(this.roleRepository.existsById(s))return false;
+        else return true;
     }
 
 }

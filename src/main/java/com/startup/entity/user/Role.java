@@ -1,13 +1,16 @@
 package com.startup.entity.user;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 
+
+@Entity
 public class Role implements Serializable {
-    
+    @Id
     private String  roleId;
     private String type;
 
-    private Role(){}
+    protected Role(){}
 
     
     public Role (Builder builder){
