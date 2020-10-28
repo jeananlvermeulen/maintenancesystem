@@ -1,5 +1,10 @@
 package com.startup.entity.user;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -8,9 +13,12 @@ import java.util.Objects;
  * Date: 04 July 2020
  */
 
-public class UserRole {
-    private String userId;
-    private String roleId;
+@Entity
+@IdClass(UserRoleId.class)
+public class UserRole implements Serializable{
+
+    @Id
+    private String userId, roleId;
 
     public UserRole(){
 
@@ -61,14 +69,5 @@ public class UserRole {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UserRole userrole = (UserRole) o;
-        return userId.equals(userrole.userId);
-    }
 
-    @Override
-    public int hashCode() { return Objects.hash(userId); }
 }
