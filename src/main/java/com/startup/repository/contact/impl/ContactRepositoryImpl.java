@@ -12,7 +12,6 @@
 //
 //import java.util.HashSet;
 //import java.util.Set;
-//@Deprecated
 //public class ContactRepositoryImpl implements ContactRepository {
 //
 //    private static ContactRepository repository = null;

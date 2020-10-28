@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Service
 public class ContactServiceImpl implements ContactService {
 
-    private static ContactService service = null;
+//    private static ContactService service = null;
     @Autowired
     private ContactRepository repository;
 
