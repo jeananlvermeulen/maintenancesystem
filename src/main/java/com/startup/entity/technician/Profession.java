@@ -18,11 +18,8 @@ import java.util.Objects;
 public class Profession implements Serializable {
 
     @Id
-    @Column()
     private String professionId;
-    @Column()
     private String profName;
-    @Column()
     private String profDesc;
 
     protected Profession() {

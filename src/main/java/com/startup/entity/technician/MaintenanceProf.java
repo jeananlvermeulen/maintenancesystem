@@ -17,7 +17,6 @@ import java.io.Serializable;
 public class MaintenanceProf implements Serializable {
 
     @Id
-    @Column()
     private String maintenanceId, professionId;
 
     protected MaintenanceProf() {

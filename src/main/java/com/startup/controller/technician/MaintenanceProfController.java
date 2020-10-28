@@ -55,5 +55,9 @@ public class MaintenanceProfController {
     public MaintenanceProf update(@RequestBody MaintenanceProf maintenanceProf){
         return maintenanceProfService.update(maintenanceProf);
     }
+    @DeleteMapping("/delete/{id}")
+    public boolean delete(@PathVariable String id){
+        return maintenanceProfService.delete(id);
+    }
 
 }

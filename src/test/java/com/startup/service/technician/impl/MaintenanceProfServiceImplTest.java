@@ -1,11 +1,7 @@
 package com.startup.service.technician.impl;
-
-import com.startup.entity.technician.Maintenance;
 import com.startup.entity.technician.MaintenanceProf;
-import com.startup.factory.technician.MaintenanceFactory;
 import com.startup.factory.technician.MaintenanceProfFactory;
 import com.startup.service.technician.MaintenanceProfService;
-import com.startup.service.technician.MaintenanceService;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;

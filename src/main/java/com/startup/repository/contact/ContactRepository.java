@@ -1,11 +1,12 @@
 package com.startup.repository.contact;
 
 import com.startup.entity.contact.Contact;
-import com.startup.repository.IRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Set;
 
-public interface ContactRepository extends IRepository<Contact, String> {
+@Repository
+public interface ContactRepository extends JpaRepository<Contact, String> {
 
-    Set<Contact> getAll();
 }

@@ -1,18 +1,23 @@
 package com.startup.entity.contact;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
 /**
  * @author @CloeteSC
  * Desc: Entity for Contact
- * Date: 03 July 2020
+ * Date: 27 October 2020
  */
+@Entity
 
-public class Contact {
+public class Contact{
+
+    @Id
     private String phone;
     private String email;
     private String homephone;
 
-    public Contact(){
+    protected Contact(){
     }
 
     private Contact(Builder builder){
@@ -75,6 +80,7 @@ public class Contact {
         }
 
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
