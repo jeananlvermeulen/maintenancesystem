@@ -17,11 +17,8 @@ import java.util.Objects;
 public class Maintenance implements Serializable{
 
     @Id
-    @Column()
     private String maintenanceId;
-    @Column()
     private String name;
-    @Column()
     private String lastname;
 
 
