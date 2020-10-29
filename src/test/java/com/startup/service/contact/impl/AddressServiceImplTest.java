@@ -9,13 +9,15 @@ import com.startup.service.contact.AddressService;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
 import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AddressServiceImplTest {
-    private static AddressService service = AddressServiceImpl.getService();
+    @Autowired
+    private AddressService service;
     private static Address address = AddressFactory.buildAddress("10 Dorset Woodstock 8001", "PO Box 33069");
 
 
