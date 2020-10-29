@@ -41,10 +41,10 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public boolean delete(String s) {
-
-        this.roleRepository.deleteById(s);
-        if(this.roleRepository.existsById(s))return false;
-        else return true;
+         this.roleRepository.deleteById(s);
+         if(this.roleRepository.existsById(s))return false;
+         else return true;
+        
     }
 
 }
