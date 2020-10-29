@@ -44,7 +44,7 @@ public class RoleServiceImpl implements RoleService {
          this.roleRepository.deleteById(s);
          if(this.roleRepository.existsById(s))return false;
          else return true;
-        
+
     }
 
 }
