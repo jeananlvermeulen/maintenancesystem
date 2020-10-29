@@ -6,15 +6,19 @@
 
 package com.startup.entity.contact;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class Address {
 
+    @Id
     private String addressId;
     private String physicalAddress;
     private String postalAddress;
 
-    public Address() {
+    protected Address() {
     }
 
     private Address(Builder builder) {

@@ -1,15 +1,12 @@
 package com.startup.service.technician.impl;
-
-import com.startup.entity.technician.Maintenance;
 import com.startup.entity.technician.MaintenanceProf;
-import com.startup.factory.technician.MaintenanceFactory;
 import com.startup.factory.technician.MaintenanceProfFactory;
 import com.startup.service.technician.MaintenanceProfService;
-import com.startup.service.technician.MaintenanceService;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
@@ -18,7 +15,8 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MaintenanceProfServiceImplTest {
 
-    private static MaintenanceProfService maintenanceProfService = MaintenanceProfServiceImpl.getService();
+    @Autowired
+    private MaintenanceProfService maintenanceProfService;
     private static MaintenanceProf maintenanceProf = MaintenanceProfFactory
             .buildMaintenanceProf("217025358","IT technician");
 

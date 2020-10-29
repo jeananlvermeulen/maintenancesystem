@@ -16,8 +16,8 @@ public class ProfessionController {
 
     @PostMapping("/create")
     public Profession create(@RequestBody Profession profession){
-     Profession newProfession = ProfessionFactory.buildProfession(profession.getName(),
-             profession.getDescription());
+     Profession newProfession = ProfessionFactory.buildProfession(profession.getProfName(),
+             profession.getProfDesc());
      return professionService.create(newProfession);
     }
 

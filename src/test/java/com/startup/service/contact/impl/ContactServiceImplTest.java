@@ -2,7 +2,7 @@ package com.startup.service.contact.impl;
 /**
  * @author @CloeteSC
  * Desc: Test Repository for Contact
- * Date: 05 September 2020
+ * Date: 28 October 2020
  */
 import com.startup.entity.contact.Contact;
 import com.startup.factory.contact.ContactFactory;
@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
@@ -18,7 +19,8 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ContactServiceImplTest {
 
-    private static ContactService service = ContactServiceImpl.getService();
+    @Autowired
+    private static ContactService service;
     private static Contact contact = ContactFactory.createContact("0787894420","contact21@gmail.com","0215523215");
 
 

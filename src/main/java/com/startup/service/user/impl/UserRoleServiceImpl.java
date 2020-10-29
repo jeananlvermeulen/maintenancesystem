@@ -5,50 +5,48 @@ package com.startup.service.user.impl;
 
 import com.startup.entity.user.UserRole;
 import com.startup.repository.user.UserRoleRepository;
-import com.startup.repository.user.impl.UserRoleRepositoryImpl;
 import com.startup.service.user.UserRoleService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.stream.Collectors;
 import java.util.Set;
 
 @Service
 public class UserRoleServiceImpl implements UserRoleService {
 
-    private static UserRoleService userRoleService = null;
+    @Autowired
     private UserRoleRepository userRoleRepository;
 
-    private UserRoleServiceImpl(){
-
-        this.userRoleRepository = UserRoleRepositoryImpl.getRepository();
-    }
-
-    public static UserRoleService getService(){
-        if (userRoleService == null) userRoleService = new UserRoleServiceImpl();
-        return userRoleService;
-    }
 
     @Override
     public Set<UserRole> getAll() {
-        return this.userRoleRepository.getAll();
+        return this.userRoleRepository.findAll().stream().collect(Collectors.toSet());
     }
 
     @Override
     public UserRole create(UserRole userRole) {
-        return this.userRoleRepository.create(userRole);
+        return this.userRoleRepository.save(userRole);
     }
 
     @Override
     public UserRole read(String s) {
-        return this.userRoleRepository.read(s);
+        return this.userRoleRepository.findById(s).orElse(null);
     }
 
     @Override
     public UserRole update(UserRole userRole) {
-        return this.userRoleRepository.update(userRole);
+        if (this.userRoleRepository.existsById(userRole.getUserId())) {
+            return this.userRoleRepository.save(userRole);
+        }
+        return null;
+
     }
 
     @Override
     public boolean delete(String s) {
-        return this.userRoleRepository.delete(s);
+        this.userRoleRepository.deleteById(s);
+        if(this.userRoleRepository.existsById(s)) return false;
+        else return true;
     }
 }
