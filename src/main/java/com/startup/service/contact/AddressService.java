@@ -7,4 +7,6 @@ import java.util.Set;
 public interface AddressService extends IService<Address, String> {
 
     Set<Address> getAll();
+    int getNumberOfActiveAddresses();
+
 }

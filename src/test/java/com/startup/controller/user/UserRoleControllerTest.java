@@ -4,6 +4,7 @@ package com.startup.controller.user;
 import com.startup.entity.user.UserRole;
 import com.startup.factory.user.UserRoleFactory;
 import org.apache.catalina.User;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -60,6 +61,7 @@ public class UserRoleControllerTest {
         String url = baseUrl + "read/" + userRole.getUserId();
         System.out.println("URL: " + url);
         ResponseEntity<UserRole> response = restTemplate.getForEntity(url, UserRole.class);
+        userRole = response.getBody();
         assertEquals(userRole.getUserId(), response.getBody().getUserId());
     }
 
