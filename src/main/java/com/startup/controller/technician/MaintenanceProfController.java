@@ -38,7 +38,7 @@ public class MaintenanceProfController {
         if(existedMaintenance && existedProfession){
             return maintenanceProfService.create(maintenanceProf);
         }else{
-            return MaintenanceProfFactory.buildMaintenanceProf("","");
+            return MaintenanceProfFactory.buildMaintenanceProf("");
         }
     }
 

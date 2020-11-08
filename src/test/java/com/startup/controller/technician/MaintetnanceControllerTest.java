@@ -27,6 +27,9 @@ public class MaintetnanceControllerTest {
     private static Maintenance maintenance = MaintenanceFactory.buildMaintenance("Christ",
             "Nganga");
 
+    private static String  SECURITY_USERNAME = "user";
+    private static String SECURITY_PASSWORD = "3585";
+
     private TestRestTemplate restTemplate = new TestRestTemplate();
     private String baseUrl = "http://localhost:8080/maintenance/";
 
@@ -35,7 +38,9 @@ public class MaintetnanceControllerTest {
         String url = baseUrl + "create";
         System.out.println("URL" + url);
         System.out.println("Post maintenance" + maintenance);
-        ResponseEntity<Maintenance> postResponse = restTemplate.postForEntity(url, maintenance, Maintenance.class);
+        ResponseEntity<Maintenance> postResponse = restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .postForEntity(url, maintenance, Maintenance.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
         maintenance = postResponse.getBody();
@@ -50,7 +55,9 @@ public class MaintetnanceControllerTest {
         System.out.println("URL: " + url);
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
-        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .exchange(url, HttpMethod.GET, entity, String.class);
         System.out.println(response);
         System.out.println(response.getBody());
 
@@ -60,7 +67,9 @@ public class MaintetnanceControllerTest {
     public void b_read(){
         String url = baseUrl + "read/" + maintenance.getMaintenanceId();
         System.out.println("URL: " + url);
-        ResponseEntity<Maintenance> response = restTemplate.getForEntity(url, Maintenance.class);
+        ResponseEntity<Maintenance> response = restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .getForEntity(url, Maintenance.class);
         assertEquals(maintenance.getMaintenanceId(), response.getBody().getMaintenanceId());
     }
 
@@ -70,7 +79,9 @@ public class MaintetnanceControllerTest {
         String url = baseUrl + "update";
         System.out.println("URL: " + url);
         System.out.println("post maintenance: " + updated);
-        ResponseEntity<Maintenance> response = restTemplate.postForEntity(url, updated, Maintenance.class);
+        ResponseEntity<Maintenance> response = restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .postForEntity(url, updated, Maintenance.class);
         assertEquals(maintenance.getMaintenanceId(), response.getBody().getMaintenanceId());
     }
 
@@ -78,7 +89,9 @@ public class MaintetnanceControllerTest {
     public void e_delete(){
         String url = baseUrl + "delete/" + maintenance.getMaintenanceId();
         System.out.println("URL: " + url);
-        restTemplate.delete(url);
+        restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .delete(url);
     }
 
 }
