@@ -18,7 +18,7 @@ public class MaintenanceProfServiceImplTest {
     @Autowired
     private MaintenanceProfService maintenanceProfService;
     private static MaintenanceProf maintenanceProf = MaintenanceProfFactory
-            .buildMaintenanceProf("217025358","IT technician");
+            .buildMaintenanceProf("217025358");
 
 
     @Test
@@ -40,8 +40,7 @@ public class MaintenanceProfServiceImplTest {
 
         MaintenanceProf updated = new MaintenanceProf.Builder()
                 .copy(maintenanceProf)
-                .maintenanceId("21700333")
-                .professionId("Plumber")
+                .professionId("21700333")
                 .build();
     }
 
