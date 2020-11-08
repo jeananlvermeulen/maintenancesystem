@@ -6,15 +6,20 @@
 
 package com.startup.entity.user;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import java.util.Objects;
 
+@Entity
 public class User {
 
+    @Id
     private String userId;
     private String name;
     private String lastname;
 
-    public User(){
+    protected User(){
 
     }
 
