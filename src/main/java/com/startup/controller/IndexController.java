@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
-    @RequestMapping(value = {"/", "/maintenance"})
+    @RequestMapping(value = {"/", "/home"})
     public ResponseEntity<String> home() {
         return new ResponseEntity<>("Welcome to Maintenance Finder App!", HttpStatus.OK);
     }

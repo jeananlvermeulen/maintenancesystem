@@ -25,6 +25,9 @@ public class ProfessionControllerTest {
     private static Profession profession = ProfessionFactory.buildProfession("IT Technician",
             "Everything about IT");
 
+    private static String  SECURITY_USERNAME = "user";
+    private static String SECURITY_PASSWORD = "3585";
+
     private TestRestTemplate restTemplate = new TestRestTemplate();
     private String baseUrl = "http://localhost:8080/profession/";
 
@@ -34,7 +37,9 @@ public class ProfessionControllerTest {
         String url = baseUrl + "create";
         System.out.println("URL" + url);
         System.out.println("Post profession" + profession);
-        ResponseEntity<Profession> postResponse = restTemplate.postForEntity(url, profession, Profession.class);
+        ResponseEntity<Profession> postResponse = restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .postForEntity(url, profession, Profession.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
         profession = postResponse.getBody();
@@ -49,7 +54,9 @@ public class ProfessionControllerTest {
         System.out.println("URL: " + url);
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<>(null, headers);
-        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+        ResponseEntity<String> response = restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .exchange(url, HttpMethod.GET, entity, String.class);
         System.out.println(response);
         System.out.println(response.getBody());
 
@@ -59,7 +66,9 @@ public class ProfessionControllerTest {
     public void b_read(){
         String url = baseUrl + "read/" + profession.getProfessionId();
         System.out.println("URL: " + url);
-        ResponseEntity<Profession> response = restTemplate.getForEntity(url, Profession.class);
+        ResponseEntity<Profession> response = restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .getForEntity(url, Profession.class);
         assertEquals(profession.getProfessionId(), response.getBody().getProfessionId());
     }
 
@@ -69,7 +78,9 @@ public class ProfessionControllerTest {
         String url = baseUrl + "update";
         System.out.println("URL: " + url);
         System.out.println("post profession: " + updated);
-        ResponseEntity<Profession> response = restTemplate.postForEntity(url, updated, Profession.class);
+        ResponseEntity<Profession> response = restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .postForEntity(url, updated, Profession.class);
         System.out.println(response);
         assertEquals(profession.getProfessionId(), response.getBody().getProfessionId());
     }
@@ -78,7 +89,9 @@ public class ProfessionControllerTest {
     public void e_delete(){
         String url = baseUrl + "delete/" + profession.getProfessionId();
         System.out.println("URL: " + url);
-        restTemplate.delete(url);
+        restTemplate
+                .withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .delete(url);
     }
 
 
