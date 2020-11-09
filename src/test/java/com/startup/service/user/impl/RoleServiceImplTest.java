@@ -2,18 +2,18 @@ package com.startup.service.user.impl;
 
 import com.startup.entity.user.Role;
 import com.startup.factory.user.RoleFactory;
-import com.startup.repository.user.RoleRepository;
-import com.startup.repository.user.impl.RoleRepositoryImpl;
+
 import com.startup.service.user.RoleService;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RoleServiceImplTest {
-
-    private static RoleService roleService= RoleServiceImpl.getService();
+@Autowired
+    private static RoleService roleService;
     private Role role= RoleFactory.buildRole("RC74182","Electrician");
 
     @Test
