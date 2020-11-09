@@ -3,9 +3,6 @@ package com.startup.controller.user;
 * 215002725*/
 import com.startup.entity.user.UserRole;
 import com.startup.factory.user.UserRoleFactory;
-import org.apache.catalina.User;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,6 +24,8 @@ import static org.junit.Assert.assertNotNull;
 public class UserRoleControllerTest {
 
    private static UserRole userRole = UserRoleFactory.buildUserRole("215002725");
+    private static String  SECURITY_USERNAME = "admin";
+    private static String SECURITY_PASSWORD = "3585";
 
    private TestRestTemplate restTemplate = new TestRestTemplate();
    private String baseUrl = "http://localhost:8080/userRole/";
@@ -37,7 +36,8 @@ public class UserRoleControllerTest {
        String url = baseUrl + "create";
        System.out.println("URL" + url);
        System.out.println("Post userRole" + userRole);
-       ResponseEntity<UserRole> postResponse = restTemplate.postForEntity(url, userRole, UserRole.class);
+       ResponseEntity<UserRole> postResponse = restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD )
+               .postForEntity(url, userRole, UserRole.class);
        assertNotNull(postResponse);
        assertNotNull(postResponse.getBody());
        userRole = postResponse.getBody();
@@ -51,7 +51,8 @@ public class UserRoleControllerTest {
        System.out.println("URL: " + url);
        HttpHeaders headers = new HttpHeaders();
        HttpEntity<String> entity = new HttpEntity<>(null, headers);
-       ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+       ResponseEntity<String> response = restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+               .exchange(url, HttpMethod.GET, entity, String.class);
        System.out.println(response);
        System.out.println(response.getBody());
    }
@@ -60,7 +61,8 @@ public class UserRoleControllerTest {
     public void b_read(){
         String url = baseUrl + "read/" + userRole.getUserId();
         System.out.println("URL: " + url);
-        ResponseEntity<UserRole> response = restTemplate.getForEntity(url, UserRole.class);
+        ResponseEntity<UserRole> response = restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .getForEntity(url, UserRole.class);
         userRole = response.getBody();
         assertEquals(userRole.getUserId(), response.getBody().getUserId());
     }
@@ -71,7 +73,8 @@ public class UserRoleControllerTest {
         String url = baseUrl + "update";
         System.out.println("URL: " + url);
         System.out.println("post userRole: " + updated);
-        ResponseEntity<UserRole> response = restTemplate.postForEntity(url, updated, UserRole.class);
+        ResponseEntity<UserRole> response = restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .postForEntity(url, updated, UserRole.class);
         assertEquals(userRole.getRoleId(), response.getBody().getRoleId());
     }
 

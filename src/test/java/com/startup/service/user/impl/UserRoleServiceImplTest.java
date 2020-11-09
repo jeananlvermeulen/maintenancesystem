@@ -2,7 +2,7 @@ package com.startup.service.user.impl;
 /* Jeanan Vermeulen
    215002725
 */
-import com.startup.entity.technician.MaintenanceProf;
+
 import com.startup.entity.user.UserRole;
 import com.startup.factory.user.UserRoleFactory;
 import com.startup.service.user.UserRoleService;
