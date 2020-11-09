@@ -1,13 +1,10 @@
 package com.startup.controller.user;
 /*Jéanan Vermeulen
  * 215002725*/
-import com.startup.entity.technician.Maintenance;
-import com.startup.entity.technician.MaintenanceProf;
-import com.startup.entity.technician.Profession;
+
 import com.startup.entity.user.Role;
 import com.startup.entity.user.User;
 import com.startup.entity.user.UserRole;
-import com.startup.factory.technician.MaintenanceProfFactory;
 import com.startup.factory.user.UserRoleFactory;
 import com.startup.service.user.impl.RoleServiceImpl;
 import com.startup.service.user.impl.UserRoleServiceImpl;
