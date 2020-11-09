@@ -25,23 +25,25 @@ import static org.junit.Assert.*;
 public class RoleControllerTest {
 
  private   Role role = RoleFactory.buildRole("3354","Electrician");
+ private static String SECURITY_USERNAME ="user";
+ private static String SECURITY_PASSWORD ="3585";
+
  @Autowired
     private TestRestTemplate restTemplate= new TestRestTemplate();
     private String baseURL ="http://localhost:8080/role/";
 
 
-    /*public void a_create(){
-
-        String url = baseURL + "create/";
+    public void a_create(){
+        String url = baseURL + "create";
         System.out.println("URL: "+ url);
-        System.out.println("Post  role"+ role);
-        ResponseEntity <Role> postResponse = restTemplate.postForEntity(url, role, Role.class);
+        System.out.println("Post  role:" + role);
+        ResponseEntity <Role> postResponse = restTemplate.withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD).postForEntity(url, role, Role.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());
         role =postResponse.getBody();
         System.out.println("Saved role " + role);
         assertEquals(role.getRoleId(),postResponse.getBody().getRoleId());
-    }*/
+    }
 
     @Test
     public void d_getAll(){
@@ -49,7 +51,7 @@ public class RoleControllerTest {
         System.out.println("URL:"+ url);
         HttpHeaders header=new HttpHeaders();
         HttpEntity<String> entity= new HttpEntity<>(null,header);
-        ResponseEntity<String> response =restTemplate.exchange(url, HttpMethod.GET,entity,String.class);
+        ResponseEntity<String> response =restTemplate.withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD).exchange(url, HttpMethod.GET,entity,String.class);
         System.out.println(response);
         System.out.println(response.getBody());
 
@@ -58,7 +60,7 @@ public class RoleControllerTest {
     public void b_read(){
         String url =baseURL +"read/"+ role.getRoleId();
         System.out.println("URL:"+ url);
-        ResponseEntity<Role> response=restTemplate.getForEntity(url,Role.class);
+        ResponseEntity<Role> response=restTemplate.withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD).getForEntity(url,Role.class);
         role =response.getBody();
         assertEquals(role.getRoleId(),response.getBody().getRoleId());
 
@@ -66,13 +68,14 @@ public class RoleControllerTest {
     }
     @Test
     public void c_update(){
-        //Role updated =new Role.Builder().copy(role).setType("Electrician").build();
-       Role updated =new Role.Builder().copy(role).roleId("3232").build();
-        String url =baseURL+"update/";
+        Role updated =new Role.Builder().copy(role).roleId("3232").setType("Plamber").build();
+      //Role updated =new Role.Builder().copy(role).roleId("3232").build();
+        String url =baseURL+ "update/";
+        System.out.println("URL: " + url);
         System.out.println("post Role:"+updated);
-        ResponseEntity<Role>response=restTemplate.postForEntity(url,updated,Role.class);
-        role=response.getBody();
-        System.out.println(role);
+        ResponseEntity<Role>response=restTemplate.withBasicAuth(SECURITY_USERNAME,SECURITY_PASSWORD).postForEntity(url,updated,Role.class);
+       role=response.getBody();
+        System.out.println(response);
         assertEquals(role.getRoleId(),response.getBody().getRoleId());
 
 
